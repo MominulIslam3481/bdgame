@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #e0f0ff, #ffffff);
+      margin: 0;
+      padding: 0;
+    }
+    .bonus-popup {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 360px;
+      margin: 50px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .bonus-popup h2 {
+      color: #007bff;
+      text-align: center;
+    }
+    .bonus-box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+    .deposit-btn {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      background: #f0f0f0;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .nav div {
+      text-align: center;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="bonus-popup">
+    <h2>🎁 Extra first deposit bonus</h2>
+    <div class="bonus-box">
+      <p>First deposit <strong>100000</strong> ➜ <span style="color:orange;">+ ₹800</span></p>
+      <progress value="0" max="100000" style="width:100%"></progress>
+      <br /><br />
+      <button class="deposit-btn">Deposit</button>
+    </div>
+    <div class="bonus-box">
+      <p>First deposit <strong>50000</strong> ➜ <span style="color:orange;">+ ₹800</span></p>
+      <progress value="0" max="50000" style="width:100%"></progress>
+      <br /><br />
+      <button class="deposit-btn">Deposit</button>
+    </div>
+    <div class="bonus-box">
+      <p>First deposit <strong>10000</strong> ➜ <span style="color:orange;">+ ₹800</span></p>
+      <progress value="0" max="10000" style="width:100%"></progress>
+      <br /><br />
+      <button class="deposit-btn">Deposit</button>
+    </div>
+  </div>
+
+  <div class="nav">
+    <div>🏠 Home</div>
+    <div>🎯 Activity</div>
+    <div>💎 Promotion</div>
+    <div>💼 Wallet</div>
+    <div>👤 Account</div>
+  </div>
+</body>
+</html>
