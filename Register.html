@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body>
+  <h2>Register</h2>
+  <input type="tel" id="regPhone" placeholder="Phone number"><br><br>
+  <input type="password" id="regPass" placeholder="Password"><br><br>
+  <button onclick="register()">Register</button>
+
+  <script>
+    function register() {
+      const phone = document.getElementById("regPhone").value;
+      const pass = document.getElementById("regPass").value;
+
+      if (phone && pass) {
+        localStorage.setItem("userPhone", phone);
+        localStorage.setItem("userPass", pass);
+        alert("Registration successful!");
+        window.location.href = "login.html";
+      } else {
+        alert("Please fill all fields.");
+      }
+    }
+  </script>
+</body>
+</html>
