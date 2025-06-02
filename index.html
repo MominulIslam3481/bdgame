@@ -1,26 +1,135 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DKWin Style Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .remember input {
+      margin-right: 8px;
+    }
+
+    .btn {
+      background: #0066ff;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .link {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .lang {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #0066ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lang i {
+      margin-right: 6px;
+    }
+
+    a {
+      color: #0066ff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="login-container">
+  <div class="login-card">
     <h2>Login</h2>
-    <input type="text" id="phone" placeholder="Phone Number" />
-    <div class="password-box">
-      <input type="password" id="password" placeholder="Password" />
-      <button id="togglePassword">👁️</button>
+    <form>
+      <input type="text" placeholder="Phone Number" required />
+      <div class="form-group">
+        <input type="password" placeholder="Password" id="password" required />
+        <span class="eye-icon" onclick="togglePassword()">👁️</span>
+      </div>
+      <div class="remember">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember Me</label>
+      </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <div class="link">
+      No account? <a href="#">Register</a>
     </div>
-    <label><input type="checkbox" id="remember" /> Remember Me</label>
-    <button id="loginBtn">Login</button>
-    <p>No account? <a href="register.html">Register</a></p>
-    <p><a href="#" onclick="switchLanguage()">🌐 বাংলা</a></p>
-    <div id="message"></div>
+    <div class="lang">
+      🌐 <a href="#">বাংলা</a>
+    </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("password");
+      const type = passwordField.type === "password" ? "text" : "password";
+      passwordField.type = type;
+    }
+  </script>
 </body>
 </html>
