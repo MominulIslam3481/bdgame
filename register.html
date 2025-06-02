@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - BDGame</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Register</h2>
+        <input type="text" id="regPhone" placeholder="📞 Phone Number">
+        <div class="password-container">
+            <input type="password" id="regPassword" placeholder="🔒 Password">
+            <span id="toggleRegPassword" onclick="toggleRegPass()">👁️</span>
+        </div>
+        <button class="login-btn" onclick="register()">Register</button>
+        <p class="register">Already have an account? <a href="index.html">Login</a></p>
+        <div id="regAlert" class="alert"></div>
+    </div>
+
+    <script>
+        function toggleRegPass() {
+            const password = document.getElementById("regPassword");
+            const toggle = document.getElementById("toggleRegPassword");
+            if (password.type === "password") {
+                password.type = "text";
+                toggle.textContent = "🙈";
+            } else {
+                password.type = "password";
+                toggle.textContent = "👁️";
+            }
+        }
+
+        function register() {
+            const phone = document.getElementById("regPhone").value;
+            const pass = document.getElementById("regPassword").value;
+            const alertBox = document.getElementById("regAlert");
+
+            if (phone && pass) {
+                localStorage.setItem("userPhone", phone);
+                localStorage.setItem("userPass", pass);
+                alertBox.style.color = "green";
+                alertBox.textContent = "Registration successful! Redirecting...";
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 1500);
+            } else {
+                alertBox.style.color = "red";
+                alertBox.textContent = "Please fill all fields!";
+            }
+        }
+    </script>
+</body>
+</html>

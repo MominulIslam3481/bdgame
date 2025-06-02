@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BDGame</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="phone" placeholder="📞 Phone Number">
+        <div class="password-container">
+            <input type="password" id="password" placeholder="🔒 Password">
+            <span id="togglePassword" onclick="togglePass()">👁️</span>
+        </div>
+        <div class="options">
+            <label><input type="checkbox" id="remember"> Remember Me</label>
+        </div>
+        <button class="login-btn" onclick="login()">Login</button>
+        <p class="register">No account? <a href="#">Register</a></p>
+        <p class="lang-switch"><span onclick="switchLang()">🌐 বাংলা</span></p>
+        <div id="alert" class="alert"></div>
+    </div>
+
+    <div class="spinner" id="spinner"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
