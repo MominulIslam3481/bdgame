@@ -164,3 +164,16 @@
 
 </body>
 </html>
+<script>
+  document.querySelector(".btn-login").addEventListener("click", function () {
+    const phone = document.querySelector("input[type='tel']").value;
+    const password = document.querySelector("input[type='password']").value;
+
+    if (phone === "1234567890" && password === "1234") {
+      alert("Login successful!");
+      window.location.href = "home.html"; // redirect on success
+    } else {
+      alert("Invalid phone number or password.");
+    }
+  });
+</script>
