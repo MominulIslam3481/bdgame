@@ -1,0 +1,65 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login-container, .dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+}
+input[type="text"], input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.password-box {
+  position: relative;
+}
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button {
+  width: 95%;
+  padding: 10px;
+  background: #005eff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+.game {
+  padding: 15px;
+  background: #eaf0ff;
+  border-radius: 10px;
+}
+.bottom-nav {
+  margin-top: 20px;
+}
+.bottom-nav a {
+  margin: 0 10px;
+  text-decoration: none;
+}
