@@ -2,12 +2,18 @@
 <html>
 <head>
   <title>Register</title>
+  <meta charset="UTF-8" />
 </head>
-<body>
+<body style="font-family: sans-serif; text-align: center; padding-top: 100px;">
   <h2>Register</h2>
-  <input type="tel" id="regPhone" placeholder="Phone number"><br><br>
-  <input type="password" id="regPass" placeholder="Password"><br><br>
-  <button onclick="register()">Register</button>
+
+  <input type="tel" id="regPhone" placeholder="Phone number" style="padding:10px; width: 80%; margin: 10px 0;"><br>
+  <input type="password" id="regPass" placeholder="Password" style="padding:10px; width: 80%; margin: 10px 0;"><br>
+  <button onclick="register()" style="padding: 10px 30px;">Register</button>
+
+  <p style="margin-top: 20px;">
+    Already registered? <a href="login.html">Login here</a>
+  </p>
 
   <script>
     function register() {
@@ -15,12 +21,17 @@
       const pass = document.getElementById("regPass").value;
 
       if (phone && pass) {
+        // Store data in browser's localStorage
         localStorage.setItem("userPhone", phone);
         localStorage.setItem("userPass", pass);
         alert("Registration successful!");
-        window.location.href = "login.html";
+
+        // Redirect to login.html after 1 second
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1000);
       } else {
-        alert("Please fill all fields.");
+        alert("Please enter both phone number and password.");
       }
     }
   </script>
